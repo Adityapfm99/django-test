@@ -1,0 +1,59 @@
+<!-- movie_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="searchInput" placeholder="Search by movie name...">
+    <button id="searchButton">Search</button>
+  </div>
+  <ul>
+    {% for movie in movies %}
+        <li class="movie-item">
+            {{ movie.name }}
+            {{ movie.id }}
+            <a href="{% url 'movie_detail' movie.id %}" class="btn btn-primary">View Details</a>
+        </li>
+    {% endfor %}
+  </ul>
+
+    <!-- Pagination links -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if movies.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ movies.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ movies.number }} of {{ movies.paginator.num_pages }}.
+            </span>
+
+            {% if movies.has_next %}
+                <a href="?page={{ movies.next_page_number }}">next</a>
+                <a href="?page={{ movies.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+    <!-- JavaScript for search functionality -->
+    <script>
+        document.getElementById('searchButton').addEventListener('click', function() {
+            var searchText = document.getElementById('searchInput').value.toLowerCase();
+            var movieItems = document.querySelectorAll('.movie-item');
+            movieItems.forEach(function(item) {
+                var movieName = item.textContent.toLowerCase();
+                if (movieName.includes(searchText)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
