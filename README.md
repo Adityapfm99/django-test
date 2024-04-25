@@ -22,3 +22,21 @@ source venv/bin/activate
  python manage.py runserver
 ```
 
+
+## Movie List
+![Alt text](image/movie_list.png)
+```bash
+ 
+```
+
+## Movie Deatil
+![Alt text](image/movie_detaill.png)
+```bash
+ 
+```
+
+## Search Bar
+![Alt text](image/search_bar.png)
+```bash
+ 
+```
