@@ -24,12 +24,12 @@ source venv/bin/activate
 
 
 ## Movie List
-![Alt text](movie_test/image/movie_list.png)
+![Alt text](/image/movie_list.png)
 
 
-## Movie Deatil
-![Alt text](movie_test/image/movie_detail.png)
+## Movie Detail
+![Alt text](/image/movie_detail.png)
 
 
 ## Search Bar
-![Alt text](movie_test/image/search_bar.png)
+![Alt text](/image/search_bar.png)
