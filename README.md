@@ -22,6 +22,11 @@ source venv/bin/activate
  python manage.py runserver
 ```
 
+## Screen recording 
+```bash
+ https://drive.google.com/file/d/1kgqMyMMBxedNhgVVfaSO_5eYm7IBmvah/view?usp=sharing
+```
+
 
 ## Movie List
 ![Alt text](image/movie_list.png)
